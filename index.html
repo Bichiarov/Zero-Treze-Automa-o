@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Zero13 Automação Comercial - PDV, suporte técnico, equipamentos, redes e soluções para comércio." />
   <title>Zero13 Automação Comercial</title>
+  <!-- Versão responsiva atualizada - layout full screen -->
 
   <style>
     :root {
@@ -850,6 +851,305 @@
         height: 56px;
       }
     }
+
+
+    /* ===== AJUSTES RESPONSIVOS ZERO13 ===== */
+    html,
+    body {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - clamp(28px, 5vw, 48px)));
+    }
+
+    .logo-nav {
+      max-width: min(220px, 68vw);
+    }
+
+    h1 {
+      font-size: clamp(2.15rem, 8vw, 5.5rem);
+    }
+
+    section {
+      padding: clamp(54px, 7vw, 82px) 0;
+    }
+
+    .hero {
+      padding: clamp(48px, 7vw, 82px) 0;
+    }
+
+    .hero-actions,
+    .hero-points,
+    .grid-3,
+    .grid-4,
+    .equipment-gallery,
+    .feature-box,
+    .split {
+      width: 100%;
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr));
+    }
+
+    .grid-4,
+    .equipment-gallery {
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 245px), 1fr));
+    }
+
+    .feature-box,
+    .split {
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+    }
+
+    .hero-points {
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr));
+    }
+
+    .live-panel {
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    }
+
+    .card,
+    .equipment-card,
+    .segment-card {
+      height: 100%;
+    }
+
+    .segment-image-wrap {
+      aspect-ratio: 16 / 10;
+    }
+
+    .equipment-image {
+      aspect-ratio: 4 / 3;
+    }
+
+    @media (max-width: 1024px) {
+      .navbar {
+        min-height: auto;
+        padding: 16px 0;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .menu {
+        display: flex;
+        order: 3;
+        width: 100%;
+        gap: 14px;
+        overflow-x: auto;
+        padding: 8px 0 2px;
+        scrollbar-width: thin;
+      }
+
+      .menu a {
+        flex: 0 0 auto;
+        padding: 8px 10px;
+        border: 1px solid var(--borda);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.035);
+      }
+
+      .navbar > .btn {
+        margin-left: auto;
+      }
+
+      .cta {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .container {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+      }
+
+      .navbar {
+        align-items: stretch;
+        gap: 14px;
+      }
+
+      .navbar > a:first-child {
+        display: flex;
+        justify-content: center;
+      }
+
+      .logo-nav {
+        width: min(210px, 72vw);
+        margin: 0 auto;
+      }
+
+      .navbar > .btn {
+        width: 100%;
+        margin-left: 0;
+      }
+
+      .menu {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        overflow: visible;
+      }
+
+      .menu a {
+        text-align: center;
+        font-size: 0.88rem;
+        padding: 9px 8px;
+      }
+
+      .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions .btn,
+      .cta .btn {
+        width: 100%;
+      }
+
+      .live-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .live-weather {
+        border-left: none;
+        border-top: 1px solid var(--borda);
+        padding-left: 0;
+        padding-top: 14px;
+      }
+
+      .section-title h2 {
+        font-size: clamp(1.85rem, 8vw, 2.65rem);
+      }
+
+      .card,
+      .feature-column,
+      .security,
+      .cta {
+        border-radius: 22px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+      }
+    }
+
+    @media (max-width: 460px) {
+      .container {
+        width: min(100% - 22px, 1180px);
+      }
+
+      .menu {
+        grid-template-columns: 1fr;
+      }
+
+      .tag {
+        font-size: 0.84rem;
+        align-items: flex-start;
+      }
+
+      .hero p,
+      .section-title p {
+        font-size: 1rem;
+      }
+
+      .live-time {
+        font-size: clamp(2rem, 13vw, 2.8rem);
+      }
+
+      .card,
+      .feature-column,
+      .security,
+      .cta,
+      .equipment-content,
+      .segment-body {
+        padding: 20px;
+      }
+
+      .step {
+        grid-template-columns: 1fr;
+      }
+
+      .step-number {
+        width: 42px;
+        height: 42px;
+      }
+
+      .whatsapp-float {
+        right: 14px;
+        bottom: 14px;
+      }
+
+      .whatsapp-label {
+        display: none;
+      }
+
+      .whatsapp-icon {
+        width: 56px;
+        height: 56px;
+      }
+    }
+
+
+    /* Ajuste para ocupar melhor telas grandes */
+    @media (min-width: 981px) {
+      .container {
+        width: min(1560px, calc(100% - 96px));
+      }
+
+      .navbar {
+        width: min(1560px, calc(100% - 96px));
+      }
+
+      .hero.container {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        min-height: calc(100vh - 82px);
+        padding-left: clamp(56px, 8vw, 176px);
+        padding-right: clamp(56px, 8vw, 176px);
+      }
+
+      .hero > div {
+        width: min(980px, 100%);
+      }
+
+      .hero p {
+        max-width: 760px;
+      }
+
+      .hero-points,
+      .live-panel {
+        max-width: 900px;
+      }
+
+      .section-title {
+        max-width: 980px;
+      }
+
+      .equipment-gallery,
+      .grid-4 {
+        gap: 24px;
+      }
+    }
+
+    @media (min-width: 1500px) {
+      .hero.container {
+        padding-left: max(96px, calc((100vw - 1560px) / 2));
+        padding-right: max(96px, calc((100vw - 1560px) / 2));
+      }
+    }
+
   </style>
 </head>
 <body>
