@@ -466,6 +466,48 @@
       color: var(--cinza);
     }
 
+    .segment-card {
+      min-height: 0;
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .segment-image-wrap {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: #0a0a0a;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .segment-image {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .segment-card:hover .segment-image {
+      transform: scale(1.03);
+    }
+
+    .segment-body {
+      padding: 20px 22px 24px;
+    }
+
+    .segment-body h3 {
+      font-size: 1.2rem;
+      margin-bottom: 9px;
+      color: var(--branco);
+    }
+
+    .segment-body p {
+      color: var(--cinza);
+    }
+
 
     .equipment-gallery {
       display: grid;
@@ -831,20 +873,6 @@
       </a>
     </div>
   </header>
-  <section class="top-video-hero" aria-label="Banner animado da logomarca Zero13 Automação Comercial">
-    <video
-      class="top-video"
-      autoplay
-      muted
-      playsinline
-      preload="auto"
-      onended="this.pause();"
-      poster="assets/logo-zero13-cartao.png"
-    >
-      <source src="assets/top-logo-reveal.mp4" type="video/mp4" />
-      Seu navegador não suporta vídeo em HTML5.
-    </video>
-  </section>
 
   <main id="inicio">
     <section class="container hero">
@@ -1004,21 +1032,41 @@
         </div>
 
         <div class="grid-4">
-          <article class="card">
-            <h3>Mercados</h3>
-            <p>PDV, balança, etiquetas, estoque e controle de preços.</p>
+          <article class="card segment-card">
+            <div class="segment-image-wrap">
+              <img class="segment-image" src="assets/segmento-mercados.png" alt="Ambiente de mercado com PDV, balança e automação comercial" loading="lazy" />
+            </div>
+            <div class="segment-body">
+              <h3>Mercados</h3>
+              <p>PDV, balança, etiquetas, estoque e controle de preços.</p>
+            </div>
           </article>
-          <article class="card">
-            <h3>Padarias</h3>
-            <p>Balcão, comandas, impressoras e vendas rápidas.</p>
+          <article class="card segment-card">
+            <div class="segment-image-wrap">
+              <img class="segment-image" src="assets/segmento-padarias.png" alt="Padaria moderna com balcão, caixa e impressora" loading="lazy" />
+            </div>
+            <div class="segment-body">
+              <h3>Padarias</h3>
+              <p>Balcão, comandas, impressoras e vendas rápidas.</p>
+            </div>
           </article>
-          <article class="card">
-            <h3>Bares e restaurantes</h3>
-            <p>Mesas, comandas, cozinha, delivery e pagamentos.</p>
+          <article class="card segment-card">
+            <div class="segment-image-wrap">
+              <img class="segment-image" src="assets/segmento-bares-restaurantes.png" alt="Bar ou restaurante com sistema de automação e terminal de atendimento" loading="lazy" />
+            </div>
+            <div class="segment-body">
+              <h3>Bares e restaurantes</h3>
+              <p>Mesas, comandas, cozinha, delivery e pagamentos.</p>
+            </div>
           </article>
-          <article class="card">
-            <h3>Lojas</h3>
-            <p>Produtos, estoque, operadores, caixa e relatórios.</p>
+          <article class="card segment-card">
+            <div class="segment-image-wrap">
+              <img class="segment-image" src="assets/segmento-lojas.png" alt="Loja moderna com PDV, leitor e organização de estoque" loading="lazy" />
+            </div>
+            <div class="segment-body">
+              <h3>Lojas</h3>
+              <p>Produtos, estoque, operadores, caixa e relatórios.</p>
+            </div>
           </article>
         </div>
       </div>
