@@ -1,15 +1,12 @@
 # Zero13 Automação Comercial
 
-Site estático responsivo em HTML, CSS e JavaScript.
+Versão atualizada com:
+- layout responsivo;
+- imagens melhoradas dos equipamentos;
+- seção de depoimentos fictícios;
+- contatos via WhatsApp.
 
-## Como publicar no GitHub Pages
+Para publicar no GitHub Pages, envie o arquivo `index.html` e a pasta `assets` para a raiz do repositório.
 
-1. Envie o arquivo `index.html` para a raiz do repositório.
-2. Envie a pasta `assets` inteira para a raiz do repositório.
-3. Faça o commit.
-4. Em Settings > Pages, deixe `main / root`.
-5. Aguarde o deploy e atualize com Ctrl + F5.
 
-## Contato configurado
-
-Alexander: +55 13 98822-9261
+Atualização: adicionada seção Quem Somos com a história da 013 Automação Comercial / RRSYSTEM.

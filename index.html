@@ -1446,6 +1446,308 @@
       }
     }
 
+
+
+
+    /* Área Quem Somos */
+    .about-section {
+      position: relative;
+      overflow: hidden;
+      padding-top: 88px;
+      padding-bottom: 88px;
+    }
+
+    .about-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 8% 12%, rgba(0, 142, 232, 0.16), transparent 34%),
+        radial-gradient(circle at 90% 70%, rgba(215, 221, 229, 0.08), transparent 34%);
+    }
+
+    .about-section > .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .about-panel {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 26px;
+      align-items: stretch;
+      margin-top: 30px;
+    }
+
+    .about-story {
+      border: 1px solid rgba(215, 221, 229, 0.16);
+      border-radius: 30px;
+      padding: 34px;
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.018)),
+        rgba(255, 255, 255, 0.045);
+      box-shadow: 0 26px 72px rgba(0, 0, 0, 0.26);
+    }
+
+    .about-story h3 {
+      font-size: clamp(1.65rem, 3vw, 2.35rem);
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+      margin-bottom: 18px;
+      color: var(--branco);
+    }
+
+    .about-story p {
+      color: var(--cinza);
+      font-size: 1.05rem;
+      margin-bottom: 16px;
+    }
+
+    .about-story p:last-child {
+      margin-bottom: 0;
+    }
+
+    .about-highlight {
+      color: var(--azul-claro);
+      font-weight: 900;
+    }
+
+    .about-values {
+      display: grid;
+      gap: 16px;
+    }
+
+    .about-value-card {
+      border: 1px solid rgba(215, 221, 229, 0.16);
+      border-radius: 24px;
+      padding: 24px;
+      background:
+        linear-gradient(145deg, rgba(0, 142, 232, 0.10), rgba(255, 255, 255, 0.02)),
+        rgba(255, 255, 255, 0.04);
+      transition: 0.22s ease;
+    }
+
+    .about-value-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(0, 142, 232, 0.48);
+      background:
+        linear-gradient(145deg, rgba(0, 142, 232, 0.16), rgba(255, 255, 255, 0.025)),
+        rgba(255, 255, 255, 0.05);
+    }
+
+    .about-value-card span {
+      display: inline-flex;
+      width: 46px;
+      height: 46px;
+      border-radius: 15px;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 142, 232, 0.14);
+      border: 1px solid rgba(0, 142, 232, 0.28);
+      color: var(--azul-claro);
+      font-weight: 950;
+      margin-bottom: 14px;
+    }
+
+    .about-value-card strong {
+      display: block;
+      color: var(--branco);
+      font-size: 1.13rem;
+      margin-bottom: 8px;
+    }
+
+    .about-value-card p {
+      color: var(--cinza);
+      font-size: 0.96rem;
+    }
+
+    .about-motto {
+      margin-top: 24px;
+      border: 1px solid rgba(0, 142, 232, 0.38);
+      border-radius: 24px;
+      padding: 22px 24px;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(0, 142, 232, 0.22), transparent 40%),
+        rgba(0, 142, 232, 0.08);
+      color: var(--prata);
+      font-size: 1.18rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+
+    @media (max-width: 980px) {
+      .about-panel {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .about-section {
+        padding-top: 62px;
+        padding-bottom: 62px;
+      }
+
+      .about-story {
+        padding: 26px 22px;
+        border-radius: 26px;
+      }
+
+      .about-story p {
+        font-size: 1rem;
+      }
+
+      .about-value-card {
+        padding: 20px;
+      }
+
+      .about-motto {
+        font-size: 1.05rem;
+      }
+    }
+
+
+    /* Área de depoimentos */
+    .testimonials-section {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonials-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 15% 12%, rgba(0, 142, 232, 0.14), transparent 34%),
+        radial-gradient(circle at 85% 70%, rgba(0, 142, 232, 0.08), transparent 32%);
+    }
+
+    .testimonials-section > .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .testimonial-card {
+      position: relative;
+      min-height: 300px;
+      border: 1px solid rgba(215, 221, 229, 0.16);
+      border-radius: 26px;
+      padding: 26px;
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.018)),
+        rgba(255, 255, 255, 0.045);
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.22);
+      overflow: hidden;
+      transition: 0.24s ease;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(0, 142, 232, 0.48);
+      background:
+        linear-gradient(145deg, rgba(0, 142, 232, 0.12), rgba(255, 255, 255, 0.025)),
+        rgba(255, 255, 255, 0.045);
+    }
+
+    .testimonial-card::before {
+      content: "“";
+      position: absolute;
+      right: 20px;
+      top: -24px;
+      color: rgba(0, 142, 232, 0.18);
+      font-size: 8.5rem;
+      line-height: 1;
+      font-family: Georgia, serif;
+      font-weight: 900;
+    }
+
+    .testimonial-stars {
+      color: var(--azul-claro);
+      letter-spacing: 0.12em;
+      font-size: 0.96rem;
+      margin-bottom: 18px;
+      text-shadow: 0 0 16px rgba(0, 142, 232, 0.34);
+    }
+
+    .testimonial-text {
+      position: relative;
+      z-index: 2;
+      color: var(--prata);
+      font-size: 1.02rem;
+      line-height: 1.72;
+      margin-bottom: 24px;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      margin-top: auto;
+    }
+
+    .testimonial-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      color: #00111f;
+      background: linear-gradient(135deg, var(--azul), var(--prata));
+      font-weight: 950;
+      box-shadow: 0 12px 28px rgba(0, 142, 232, 0.24);
+      flex: 0 0 auto;
+    }
+
+    .testimonial-author strong {
+      display: block;
+      color: var(--branco);
+      line-height: 1.2;
+    }
+
+    .testimonial-author span {
+      display: block;
+      color: var(--prata-escuro);
+      font-size: 0.9rem;
+      margin-top: 3px;
+    }
+
+    .testimonial-note {
+      margin-top: 18px;
+      color: var(--prata-escuro);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 980px) {
+      .testimonials-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .testimonial-card {
+        min-height: auto;
+        padding: 22px;
+        border-radius: 24px;
+      }
+
+      .testimonial-text {
+        font-size: 0.98rem;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1457,8 +1759,10 @@
 
       <nav class="menu" aria-label="Menu principal">
         <a href="#servicos">Serviços</a>
+        <a href="#quem-somos">Quem somos</a>
         <a href="#equipamentos">Equipamentos</a>
         <a href="#segmentos">Segmentos</a>
+        <a href="#depoimentos">Depoimentos</a>
         <a href="#funcionalidades">Funcionalidades</a>
         <a href="#seguranca">Segurança</a>
         <a href="#contato">Contato</a>
@@ -1516,6 +1820,64 @@
       </div>
 
     </section>
+
+
+    <section id="quem-somos" class="about-section">
+      <div class="container">
+        <div class="section-title">
+          <span>Quem somos</span>
+          <h2>Uma empresa nascida da experiência real no suporte à automação comercial.</h2>
+          <p>
+            A 013 Automação Comercial une experiência especializada, atendimento próximo e compromisso com o pós-venda.
+          </p>
+        </div>
+
+        <div class="about-panel">
+          <div class="about-story">
+            <h3>Da RRSYSTEM à 013 Automação Comercial.</h3>
+            <p>
+              A <strong>013 Automação Comercial</strong> nasceu originalmente como <strong>RRSYSTEM</strong>.
+              A empresa surgiu depois que dois analistas com mais de 20 anos de experiência, após atuarem por muitos anos em diversas empresas do setor,
+              passaram a observar deficiências recorrentes nos atendimentos e, principalmente, nas questões de suporte e pós-venda.
+            </p>
+            <p>
+              A partir dessa experiência prática, nasceu a RRSYSTEM, hoje <strong>013 Automação Comercial</strong>,
+              com o objetivo de entregar um atendimento mais próximo, claro e responsável para empresas que dependem
+              da tecnologia para vender, controlar e manter sua operação funcionando.
+            </p>
+            <p>
+              Nosso princípio é simples: <span class="about-highlight">atender bem para atender sempre</span>,
+              trabalhando com honestidade, responsabilidade profissional e preço justo.
+            </p>
+
+            <div class="about-motto">
+              “Atender bem para atender sempre, com honestidade e preço justo.”
+            </div>
+          </div>
+
+          <div class="about-values" aria-label="Princípios da 013 Automação Comercial">
+            <article class="about-value-card">
+              <span>01</span>
+              <strong>Experiência de campo</strong>
+              <p>Conhecimento adquirido em anos de atendimento especializado, implantação de sistemas e suporte em ambientes comerciais reais.</p>
+            </article>
+
+            <article class="about-value-card">
+              <span>02</span>
+              <strong>Suporte e pós-venda</strong>
+              <p>Foco em acompanhar o cliente depois da implantação, reduzindo dúvidas, falhas operacionais e paradas no atendimento.</p>
+            </article>
+
+            <article class="about-value-card">
+              <span>03</span>
+              <strong>Honestidade e preço justo</strong>
+              <p>Atendimento transparente, soluções adequadas à necessidade do cliente e compromisso com relações de longo prazo.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
 
     <section id="servicos">
       <div class="container">
@@ -1773,6 +2135,68 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+
+
+    <section id="depoimentos" class="testimonials-section">
+      <div class="container">
+        <div class="section-title">
+          <span>Depoimentos</span>
+          <h2>Quem automatiza a operação percebe a diferença no dia a dia.</h2>
+          <p>
+            Comentários fictícios criados para demonstração visual da página. Eles podem ser substituídos por avaliações reais dos clientes da Zero13.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <article class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              A implantação do PDV deixou nosso caixa muito mais rápido. A equipe conseguiu operar com menos erro e o suporte ajudou bastante nos primeiros dias.
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">MR</div>
+              <div>
+                <strong>Marcelo Ribeiro</strong>
+                <span>Mercado de bairro</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              Organizamos o balcão, impressora, comandas e fechamento de caixa. O atendimento ficou mais fluido e ganhamos mais controle da rotina da padaria.
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">CP</div>
+              <div>
+                <strong>Carla Pereira</strong>
+                <span>Padaria e confeitaria</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              A automação ajudou muito nas comandas, mesas e pedidos. Hoje conseguimos acompanhar melhor o movimento e reduzir atrasos no atendimento.
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">RS</div>
+              <div>
+                <strong>Renato Silva</strong>
+                <span>Bar e restaurante</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <p class="testimonial-note">
+          *Depoimentos ilustrativos para apresentação comercial. Substitua por relatos reais quando disponíveis.
+        </p>
       </div>
     </section>
 
