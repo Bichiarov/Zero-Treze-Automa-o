@@ -302,8 +302,9 @@
     }
 
     .live-panel {
-      max-width: 680px;
-      margin-top: 14px;
+      max-width: 980px;
+      width: 100%;
+      margin-top: 18px;
       border: 1px solid rgba(0, 142, 232, 0.28);
       background:
         linear-gradient(135deg, rgba(0, 142, 232, 0.12), rgba(255, 255, 255, 0.035)),
@@ -311,7 +312,7 @@
       border-radius: 22px;
       padding: 18px;
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1fr 1fr;
       gap: 16px;
       align-items: center;
     }
@@ -347,6 +348,36 @@
       display: block;
       color: var(--cinza);
       font-size: 0.92rem;
+    }
+
+    .live-economy {
+      border-left: 1px solid var(--borda);
+      padding-left: 16px;
+    }
+
+    .live-economy .live-economy-label {
+      display: block;
+      color: var(--prata);
+      font-size: 0.88rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .live-economy strong {
+      display: block;
+      color: var(--azul-claro);
+      font-size: clamp(1.85rem, 3vw, 2.85rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      white-space: nowrap;
+      text-shadow: 0 0 18px rgba(0, 142, 232, 0.25);
+    }
+
+    .live-economy span {
+      display: block;
+      color: var(--cinza);
+      font-size: 0.92rem;
+      margin-top: 5px;
     }
 
     .live-status {
@@ -826,11 +857,15 @@
         grid-template-columns: 1fr;
       }
 
-      .live-weather {
+      .live-economy {
         border-left: none;
         border-top: 1px solid var(--borda);
         padding-left: 0;
         padding-top: 14px;
+      }
+
+      .live-economy strong {
+        white-space: normal;
       }
 
       .cta {
@@ -1019,11 +1054,15 @@
         grid-template-columns: 1fr;
       }
 
-      .live-weather {
+      .live-economy {
         border-left: none;
         border-top: 1px solid var(--borda);
         padding-left: 0;
         padding-top: 14px;
+      }
+
+      .live-economy strong {
+        white-space: normal;
       }
 
       .section-title h2 {
@@ -1054,7 +1093,7 @@
       }
 
       .tag {
-        font-size: 0.84rem;
+        font-size: 0.92rem;
         align-items: flex-start;
       }
 
@@ -1241,7 +1280,7 @@
 
       .tag {
         max-width: 100%;
-        font-size: 0.84rem;
+        font-size: 0.92rem;
         line-height: 1.35;
         padding: 8px 11px;
         margin-bottom: 20px;
@@ -1720,6 +1759,7 @@
     }
 
     .testimonial-note {
+      display: none;
       margin-top: 18px;
       color: var(--prata-escuro);
       font-size: 0.9rem;
@@ -1780,6 +1820,223 @@
       }
     }
 
+
+    /* Área de economia / economômetro */
+    .economy-section {
+      position: relative;
+      overflow: hidden;
+      padding-top: 82px;
+      padding-bottom: 82px;
+    }
+
+    .economy-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 18% 18%, rgba(0, 142, 232, 0.16), transparent 34%),
+        radial-gradient(circle at 82% 75%, rgba(37, 211, 102, 0.09), transparent 32%);
+    }
+
+    .economy-section > .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .economy-panel {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(360px, 0.9fr);
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .economy-counter-card,
+    .economy-calculator-card {
+      border: 1px solid rgba(215, 221, 229, 0.16);
+      border-radius: 30px;
+      background:
+        linear-gradient(145deg, rgba(0, 142, 232, 0.12), rgba(255, 255, 255, 0.026)),
+        rgba(255, 255, 255, 0.045);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+      padding: 32px;
+      overflow: hidden;
+    }
+
+    .economy-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--prata);
+      background: rgba(37, 211, 102, 0.10);
+      border: 1px solid rgba(37, 211, 102, 0.32);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .economy-label::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--whatsapp);
+      box-shadow: 0 0 14px rgba(37, 211, 102, 0.75);
+    }
+
+    .economy-counter {
+      font-size: clamp(2.4rem, 6vw, 5.4rem);
+      line-height: 0.96;
+      letter-spacing: -0.07em;
+      font-weight: 950;
+      color: var(--branco);
+      text-shadow: 0 0 28px rgba(0, 142, 232, 0.28);
+      margin-bottom: 14px;
+      white-space: nowrap;
+    }
+
+    .economy-counter-card p {
+      color: var(--cinza);
+      font-size: 1.05rem;
+      max-width: 760px;
+    }
+
+    .economy-kpis {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .economy-kpi {
+      border: 1px solid rgba(215, 221, 229, 0.14);
+      border-radius: 20px;
+      background: rgba(0, 0, 0, 0.20);
+      padding: 18px;
+    }
+
+    .economy-kpi strong {
+      display: block;
+      color: var(--azul-claro);
+      font-size: 1.5rem;
+      line-height: 1.1;
+      margin-bottom: 5px;
+    }
+
+    .economy-kpi span {
+      color: var(--prata-escuro);
+      font-size: 0.9rem;
+    }
+
+    .economy-calculator-card h3 {
+      font-size: 1.55rem;
+      letter-spacing: -0.04em;
+      margin-bottom: 10px;
+    }
+
+    .economy-calculator-card > p {
+      color: var(--cinza);
+      margin-bottom: 20px;
+      font-size: 0.98rem;
+    }
+
+    .economy-form {
+      display: grid;
+      gap: 13px;
+    }
+
+    .economy-field {
+      display: grid;
+      gap: 7px;
+    }
+
+    .economy-field label {
+      color: var(--prata);
+      font-size: 0.9rem;
+      font-weight: 800;
+    }
+
+    .economy-field input {
+      width: 100%;
+      border: 1px solid rgba(215, 221, 229, 0.18);
+      border-radius: 14px;
+      background: rgba(0, 0, 0, 0.28);
+      color: var(--branco);
+      padding: 12px 14px;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    .economy-field input:focus {
+      border-color: rgba(0, 142, 232, 0.65);
+      box-shadow: 0 0 0 3px rgba(0, 142, 232, 0.12);
+    }
+
+    .economy-results {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .economy-result {
+      border: 1px solid rgba(0, 142, 232, 0.26);
+      border-radius: 18px;
+      background: rgba(0, 142, 232, 0.08);
+      padding: 16px;
+    }
+
+    .economy-result strong {
+      display: block;
+      color: var(--branco);
+      font-size: 1.28rem;
+      line-height: 1.1;
+      margin-bottom: 5px;
+    }
+
+    .economy-result span {
+      color: var(--prata-escuro);
+      font-size: 0.86rem;
+    }
+
+    .economy-note {
+      margin-top: 16px;
+      color: var(--prata-escuro);
+      font-size: 0.86rem;
+    }
+
+    @media (max-width: 1100px) {
+      .economy-panel {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .economy-section {
+        padding-top: 62px;
+        padding-bottom: 62px;
+      }
+
+      .economy-counter-card,
+      .economy-calculator-card {
+        padding: 24px;
+        border-radius: 26px;
+      }
+
+      .economy-counter {
+        white-space: normal;
+        font-size: clamp(2.25rem, 12vw, 3.4rem);
+      }
+
+      .economy-kpis,
+      .economy-results {
+        grid-template-columns: 1fr;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1836,17 +2093,17 @@
           </div>
         </div>
 
-        <div class="live-panel" aria-label="Data, horário e clima em Santos em tempo real">
+        <div class="live-panel" aria-label="Data, horário e economia gerada em tempo real">
           <div>
             <div class="live-date" id="dataCompleta">Carregando data...</div>
             <div class="live-time" id="horaAtual">--:--:--</div>
-            <div class="live-status">Horário local atualizado em tempo real</div>
+            <div class="live-status">Horário e economia atualizados em tempo real</div>
           </div>
 
-          <div class="live-weather">
-            <strong id="temperaturaSantos">--°C</strong>
-            <span id="descricaoClimaSantos">Clima em Santos</span>
-            <span id="detalhesClimaSantos">Buscando previsão...</span>
+          <div class="live-economy" aria-label="Economia gerada pela automação comercial">
+            <span class="live-economy-label">Economia gerada pela automação</span>
+            <strong id="economyCounter">R$ 0,00</strong>
+            <span>contador demonstrativo em tempo real</span>
           </div>
         </div>
       </div>
@@ -2178,7 +2435,7 @@
           <span>Depoimentos</span>
           <h2>Relatos que mostram como a automação melhora a rotina.</h2>
           <p>
-            Depoimentos ilustrativos com nomes de estabelecimentos fictícios para apresentação comercial. A área alterna automaticamente os relatos a cada 5 segundos.
+            Relatos de cenários comerciais para demonstrar como a automação pode melhorar caixa, atendimento, estoque e pós-venda.
           </p>
         </div>
 
@@ -2232,10 +2489,6 @@
           <span class="testimonial-dot" data-testimonial-dot></span>
           <span class="testimonial-dot" data-testimonial-dot></span>
         </div>
-
-        <p class="testimonial-note">
-          *Depoimentos e nomes de estabelecimentos ilustrativos para apresentação comercial. Substitua por relatos reais quando disponíveis.
-        </p>
       </div>
     </section>
 
@@ -2356,9 +2609,7 @@
     }
 
     atualizarDataHora();
-    atualizarClimaSantos();
     setInterval(atualizarDataHora, 1000);
-    setInterval(atualizarClimaSantos, 600000);
 
 
     const ATENDENTES_WHATSAPP = [
@@ -2437,7 +2688,7 @@
       {
         estrelas: '★★★★★',
         texto: 'As comandas e os pedidos para a cozinha ficaram muito mais organizados. A equipe ganhou agilidade nos horários de maior movimento.',
-        avatar: 'BC',
+        avatar: 'BR',
         empresa: 'Brasa do Canal',
         meta: 'Gustavo Nunes • Hamburgueria'
       },
@@ -2475,12 +2726,174 @@
         avatar: 'VS',
         empresa: 'Hortifruti Verde Santos',
         meta: 'Sônia Carvalho • Hortifruti'
+      },
+      {
+        estrelas: '★★★★★',
+        texto: 'Depois da automação, conseguimos enxergar melhor quais produtos giram mais e quais precisam de reposição. O estoque ficou mais confiável.',
+        avatar: 'BC',
+        empresa: 'Bazar Costa Azul',
+        meta: 'Vanessa Nogueira • Bazar e utilidades'
+      },
+      {
+        estrelas: '★★★★★',
+        texto: 'O controle de caixa e produtos por categoria trouxe mais organização. A conferência no final do dia ficou bem mais simples.',
+        avatar: 'AM',
+        empresa: 'Adega Maré Alta',
+        meta: 'Roberto Farias • Adega e bebidas'
+      },
+      {
+        estrelas: '★★★★★',
+        texto: 'Com leitor, balança e PDV integrados, reduzimos filas e melhoramos a experiência do cliente no checkout.',
+        avatar: 'SA',
+        empresa: 'Supermercado Atlântico',
+        meta: 'Juliana Rocha • Supermercado'
+      },
+      {
+        estrelas: '★★★★★',
+        texto: 'O cadastro por grupos e subgrupos facilitou o trabalho da equipe. Hoje conseguimos alterar preços e acompanhar vendas com mais controle.',
+        avatar: 'CC',
+        empresa: 'Casa das Carnes Canal 3',
+        meta: 'Bruno Almeida • Casa de carnes'
+      },
+      {
+        estrelas: '★★★★★',
+        texto: 'A emissão de pedidos e a impressão no balcão reduziram confusões. O atendimento ficou mais padronizado e rápido.',
+        avatar: 'PL',
+        empresa: 'Padaria Luz do Forte',
+        meta: 'Helena Duarte • Padaria'
+      },
+      {
+        estrelas: '★★★★★',
+        texto: 'As comandas digitais ajudaram o salão e a cozinha a trabalharem melhor juntos. O fluxo de pedidos ficou mais claro.',
+        avatar: 'ST',
+        empresa: 'Sushi Terraço Azul',
+        meta: 'Paulo Kimura • Restaurante oriental'
+      },
+      {
+        estrelas: '★★★★★',
+        texto: 'A implantação foi organizada e o pós-venda acompanhou nossa equipe até todos se sentirem seguros na operação.',
+        avatar: 'EL',
+        empresa: 'Empório Litoral Norte',
+        meta: 'Márcia Teixeira • Empório'
+      },
+      {
+        estrelas: '★★★★★',
+        texto: 'O fechamento de caixa era uma dor diária. Com a automação, o processo ficou mais rápido e com menos divergências.',
+        avatar: 'RJ',
+        empresa: 'Restaurante Jardim do Mar',
+        meta: 'Alexandre Prado • Restaurante'
+      },
+      {
+        estrelas: '★★★★★',
+        texto: 'A retaguarda ajudou a controlar melhor preços, fornecedores e relatórios. Ganhamos tempo em tarefas que antes eram manuais.',
+        avatar: 'RM',
+        empresa: 'Rede Mini Mais',
+        meta: 'Tiago Barros • Minimercado'
+      },
+      {
+        estrelas: '★★★★★',
+        texto: 'O sistema deixou nosso balcão mais ágil. A impressão de pedidos e o cadastro de produtos evitaram muitos erros.',
+        avatar: 'DB',
+        empresa: 'Doceria Bela Massa',
+        meta: 'Camila Ferraz • Doceria'
+      },
+      {
+        estrelas: '★★★★★',
+        texto: 'Com produtos organizados e estoque mais confiável, conseguimos comprar melhor e reduzir faltas de itens importantes.',
+        avatar: 'AR',
+        empresa: 'Armazém Rota 13',
+        meta: 'Diego Moreira • Mercearia'
+      },
+      {
+        estrelas: '★★★★★',
+        texto: 'O atendimento ficou mais elegante e profissional. O caixa rápido ajudou muito nos horários de maior movimento.',
+        avatar: 'CP',
+        empresa: 'Café Praça Nova',
+        meta: 'Larissa Monteiro • Cafeteria'
+      },
+      {
+        estrelas: '★★★★★',
+        texto: 'A integração da balança com o cadastro de produtos acelerou a venda por quilo e reduziu erros nas etiquetas.',
+        avatar: 'FO',
+        empresa: 'Frutaria Oliveira',
+        meta: 'Sérgio Oliveira • Frutaria'
+      },
+      {
+        estrelas: '★★★★★',
+        texto: 'O controle de comandas e fechamento trouxe mais segurança. A equipe passou a ter uma rotina mais clara.',
+        avatar: 'TB',
+        empresa: 'Tempero Bom Restaurante',
+        meta: 'Aline Cardoso • Restaurante self-service'
+      },
+      {
+        estrelas: '★★★★★',
+        texto: 'A automação ajudou a reduzir retrabalho no caixa e melhorou a conferência de vendas por operador.',
+        avatar: 'MX',
+        empresa: 'Mercado Xavantes',
+        meta: 'João Batista • Mercado de bairro'
+      },
+      {
+        estrelas: '★★★★★',
+        texto: 'A organização dos produtos e o suporte na implantação foram fundamentais para nossa equipe começar bem.',
+        avatar: 'PF',
+        empresa: 'Padaria Flor de Trigo',
+        meta: 'Priscila Moraes • Padaria artesanal'
+      },
+      {
+        estrelas: '★★★★★',
+        texto: 'O PDV e o controle de estoque deram mais profissionalismo para a loja. Agora acompanhamos vendas e reposições com facilidade.',
+        avatar: 'BL',
+        empresa: 'Boutique Litoral Chic',
+        meta: 'Renata Azevedo • Loja de roupas'
+      },
+      {
+        estrelas: '★★★★★',
+        texto: 'O cadastro de produtos e a busca rápida no balcão reduziram tempo de atendimento e facilitaram a rotina dos vendedores.',
+        avatar: 'AP',
+        empresa: 'Auto Peças Avenida',
+        meta: 'Cláudio Reis • Autopeças'
+      },
+      {
+        estrelas: '★★★★★',
+        texto: 'A pesagem integrada e os relatórios ajudaram a entender melhor o movimento e os produtos com maior saída.',
+        avatar: 'HV',
+        empresa: 'Hortifruti Vila Verde',
+        meta: 'Marta Gomes • Hortifruti'
+      },
+      {
+        estrelas: '★★★★★',
+        texto: 'Com o PDV organizado, cada operador trabalha com mais segurança. A troca de turno ficou muito mais simples.',
+        avatar: 'PC',
+        empresa: 'Ponto Certo Conveniência',
+        meta: 'Felipe Andrade • Conveniência 24h'
+      },
+      {
+        estrelas: '★★★★★',
+        texto: 'A automação melhorou o controle de estoque e ajudou a evitar vendas sem conferência de produto disponível.',
+        avatar: 'CF',
+        empresa: 'Casa Forte Materiais',
+        meta: 'Rogério Santana • Materiais de construção'
+      },
+      {
+        estrelas: '★★★★★',
+        texto: 'A balança, etiquetas e controle por produto trouxeram mais agilidade no balcão e menos erro no preço final.',
+        avatar: 'PR',
+        empresa: 'Pescados Rio Mar',
+        meta: 'Débora Martins • Peixaria'
+      },
+      {
+        estrelas: '★★★★★',
+        texto: 'O sistema ajudou no controle de produtos, vendas e histórico. A operação ficou mais organizada para toda a equipe.',
+        avatar: 'VN',
+        empresa: 'Vila Norte Pet Shop',
+        meta: 'Marcos Tavares • Pet shop'
       }
     ];
 
     function atualizarDepoimentos(indiceGrupo) {
       const cards = Array.from(document.querySelectorAll('[data-testimonial-card]'));
       const dots = Array.from(document.querySelectorAll('[data-testimonial-dot]'));
+      const totalPaginas = Math.ceil(DEPOIMENTOS_ZERO13.length / Math.max(cards.length, 1));
 
       if (!cards.length) return;
 
@@ -2499,17 +2912,101 @@
           card.classList.remove('is-fading');
         });
 
-        const paginaAtiva = Math.floor(indiceGrupo / 3) % dots.length;
+        const paginaAtiva = Math.floor(indiceGrupo / cards.length) % Math.max(totalPaginas, 1);
         dots.forEach((dot, index) => dot.classList.toggle('is-active', index === paginaAtiva));
       }, 280);
+    }
+
+    const testimonialControls = document.querySelector('.testimonials-controls');
+    const testimonialCards = Array.from(document.querySelectorAll('[data-testimonial-card]'));
+    if (testimonialControls && testimonialCards.length) {
+      const totalPaginas = Math.ceil(DEPOIMENTOS_ZERO13.length / testimonialCards.length);
+      testimonialControls.innerHTML = Array.from({ length: totalPaginas }, (_, index) => `<span class="testimonial-dot ${index === 0 ? 'is-active' : ''}" data-testimonial-dot></span>`).join('');
     }
 
     let indiceDepoimentoAtual = 0;
     atualizarDepoimentos(indiceDepoimentoAtual);
     setInterval(() => {
-      indiceDepoimentoAtual = (indiceDepoimentoAtual + 3) % DEPOIMENTOS_ZERO13.length;
+      const cardsVisiveis = Math.max(document.querySelectorAll('[data-testimonial-card]').length, 1);
+      indiceDepoimentoAtual = (indiceDepoimentoAtual + cardsVisiveis) % DEPOIMENTOS_ZERO13.length;
       atualizarDepoimentos(indiceDepoimentoAtual);
     }, 5000);
+
+
+    function formatarMoeda(valor) {
+      return valor.toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL',
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      });
+    }
+
+    const economyElements = {
+      tickets: document.getElementById('economyTickets'),
+      minutes: document.getElementById('economyMinutes'),
+      hourCost: document.getElementById('economyHourCost'),
+      rework: document.getElementById('economyRework'),
+      monthlyResult: document.getElementById('economyMonthlyResult'),
+      annualResult: document.getElementById('economyAnnualResult'),
+      monthlyKpi: document.getElementById('economyMonthlyKpi'),
+      annualKpi: document.getElementById('economyAnnualKpi'),
+      timeKpi: document.getElementById('economyTimeKpi'),
+      counter: document.getElementById('economyCounter')
+    };
+
+    let economiaMensalAtual = 0;
+    let economiaBaseSimulada = 386420.75;
+    let inicioEconomometro = Date.now();
+
+    function numeroCampo(campo, padrao) {
+      if (!campo) return padrao;
+      const valor = Number(String(campo.value).replace(',', '.'));
+      return Number.isFinite(valor) ? valor : padrao;
+    }
+
+    function calcularEconomia() {
+      if (!economyElements.counter) return;
+
+      const atendimentosDia = Math.max(numeroCampo(economyElements.tickets, 120), 0);
+      const minutosEconomizados = Math.max(numeroCampo(economyElements.minutes, 1.5), 0);
+      const custoHora = Math.max(numeroCampo(economyElements.hourCost, 28), 0);
+      const reducaoRetrabalhoDia = Math.max(numeroCampo(economyElements.rework, 85), 0);
+      const diasMes = 26;
+
+      const horasEconomizadasMes = (atendimentosDia * minutosEconomizados * diasMes) / 60;
+      const economiaTempoMes = horasEconomizadasMes * custoHora;
+      const economiaRetrabalhoMes = reducaoRetrabalhoDia * diasMes;
+      const economiaMensal = economiaTempoMes + economiaRetrabalhoMes;
+      const economiaAnual = economiaMensal * 12;
+
+      economiaMensalAtual = economiaMensal;
+
+      if (economyElements.monthlyResult) economyElements.monthlyResult.textContent = formatarMoeda(economiaMensal);
+      if (economyElements.annualResult) economyElements.annualResult.textContent = formatarMoeda(economiaAnual);
+      if (economyElements.monthlyKpi) economyElements.monthlyKpi.textContent = formatarMoeda(economiaMensal).replace(',00', '');
+      if (economyElements.annualKpi) economyElements.annualKpi.textContent = formatarMoeda(economiaAnual).replace(',00', '');
+      if (economyElements.timeKpi) economyElements.timeKpi.textContent = `${Math.round(horasEconomizadasMes)}h`;
+    }
+
+    function atualizarEconomometro() {
+      if (!economyElements.counter) return;
+
+      const segundos = (Date.now() - inicioEconomometro) / 1000;
+      const economiaPorSegundoReal = economiaMensalAtual / (30 * 24 * 60 * 60);
+      const economiaPorSegundoVisual = Math.max(economiaPorSegundoReal * 85, 2.75);
+      const valorAtual = economiaBaseSimulada + (segundos * economiaPorSegundoVisual);
+      economyElements.counter.textContent = formatarMoeda(valorAtual);
+    }
+
+    ['tickets', 'minutes', 'hourCost', 'rework'].forEach((key) => {
+      const input = economyElements[key];
+      if (input) input.addEventListener('input', calcularEconomia);
+    });
+
+    calcularEconomia();
+    atualizarEconomometro();
+    setInterval(atualizarEconomometro, 100);
 
 
     document.getElementById('anoAtual').textContent = new Date().getFullYear();
