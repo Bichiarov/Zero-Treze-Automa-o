@@ -1646,7 +1646,7 @@
         rgba(255, 255, 255, 0.045);
       box-shadow: 0 22px 60px rgba(0, 0, 0, 0.22);
       overflow: hidden;
-      transition: 0.24s ease;
+      transition: opacity 0.28s ease, transform 0.28s ease, border-color 0.24s ease, background 0.24s ease;
     }
 
     .testimonial-card:hover {
@@ -1725,6 +1725,38 @@
       font-size: 0.9rem;
     }
 
+    .testimonial-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .testimonial-card.is-fading {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+
+    .testimonials-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 22px;
+    }
+
+    .testimonial-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: rgba(215, 221, 229, 0.26);
+      transition: 0.25s ease;
+    }
+
+    .testimonial-dot.is-active {
+      width: 30px;
+      background: var(--azul-claro);
+      box-shadow: 0 0 18px rgba(0, 142, 232, 0.48);
+    }
+
     @media (max-width: 980px) {
       .testimonials-grid {
         grid-template-columns: 1fr 1fr;
@@ -1768,7 +1800,7 @@
         <a href="#contato">Contato</a>
       </nav>
 
-      <a class="btn btn-primary" href="https://wa.me/5513988229261?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20Alexander%20da%20Zero13." target="_blank" rel="noopener noreferrer">
+      <a class="btn btn-primary" href="https://wa.me/5513988229261?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20Alexander%20da%20Zero13." target="_blank" rel="noopener noreferrer" data-whatsapp-rotate="true">
         Solicitar demonstração
       </a>
     </div>
@@ -2144,58 +2176,65 @@
       <div class="container">
         <div class="section-title">
           <span>Depoimentos</span>
-          <h2>Quem automatiza a operação percebe a diferença no dia a dia.</h2>
+          <h2>Relatos que mostram como a automação melhora a rotina.</h2>
           <p>
-            Comentários fictícios criados para demonstração visual da página. Eles podem ser substituídos por avaliações reais dos clientes da Zero13.
+            Depoimentos ilustrativos com nomes de estabelecimentos fictícios para apresentação comercial. A área alterna automaticamente os relatos a cada 5 segundos.
           </p>
         </div>
 
-        <div class="testimonials-grid">
-          <article class="testimonial-card">
-            <div class="testimonial-stars">★★★★★</div>
-            <p class="testimonial-text">
+        <div class="testimonials-grid" aria-live="polite">
+          <article class="testimonial-card" data-testimonial-card>
+            <div class="testimonial-stars" data-testimonial-stars>★★★★★</div>
+            <p class="testimonial-text" data-testimonial-text>
               A implantação do PDV deixou nosso caixa muito mais rápido. A equipe conseguiu operar com menos erro e o suporte ajudou bastante nos primeiros dias.
             </p>
             <div class="testimonial-author">
-              <div class="testimonial-avatar">MR</div>
+              <div class="testimonial-avatar" data-testimonial-avatar>ME</div>
               <div>
-                <strong>Marcelo Ribeiro</strong>
-                <span>Mercado de bairro</span>
+                <strong data-testimonial-business>Mercado Estrela Azul</strong>
+                <span data-testimonial-meta>Marcelo Ribeiro • Mercado de bairro</span>
               </div>
             </div>
           </article>
 
-          <article class="testimonial-card">
-            <div class="testimonial-stars">★★★★★</div>
-            <p class="testimonial-text">
+          <article class="testimonial-card" data-testimonial-card>
+            <div class="testimonial-stars" data-testimonial-stars>★★★★★</div>
+            <p class="testimonial-text" data-testimonial-text>
               Organizamos o balcão, impressora, comandas e fechamento de caixa. O atendimento ficou mais fluido e ganhamos mais controle da rotina da padaria.
             </p>
             <div class="testimonial-author">
-              <div class="testimonial-avatar">CP</div>
+              <div class="testimonial-avatar" data-testimonial-avatar>PV</div>
               <div>
-                <strong>Carla Pereira</strong>
-                <span>Padaria e confeitaria</span>
+                <strong data-testimonial-business>Padaria Pão da Vila</strong>
+                <span data-testimonial-meta>Carla Pereira • Padaria e confeitaria</span>
               </div>
             </div>
           </article>
 
-          <article class="testimonial-card">
-            <div class="testimonial-stars">★★★★★</div>
-            <p class="testimonial-text">
+          <article class="testimonial-card" data-testimonial-card>
+            <div class="testimonial-stars" data-testimonial-stars>★★★★★</div>
+            <p class="testimonial-text" data-testimonial-text>
               A automação ajudou muito nas comandas, mesas e pedidos. Hoje conseguimos acompanhar melhor o movimento e reduzir atrasos no atendimento.
             </p>
             <div class="testimonial-author">
-              <div class="testimonial-avatar">RS</div>
+              <div class="testimonial-avatar" data-testimonial-avatar>P13</div>
               <div>
-                <strong>Renato Silva</strong>
-                <span>Bar e restaurante</span>
+                <strong data-testimonial-business>Restaurante Porto 13</strong>
+                <span data-testimonial-meta>Renato Silva • Bar e restaurante</span>
               </div>
             </div>
           </article>
         </div>
 
+        <div class="testimonials-controls" aria-label="Indicador de depoimentos">
+          <span class="testimonial-dot is-active" data-testimonial-dot></span>
+          <span class="testimonial-dot" data-testimonial-dot></span>
+          <span class="testimonial-dot" data-testimonial-dot></span>
+          <span class="testimonial-dot" data-testimonial-dot></span>
+        </div>
+
         <p class="testimonial-note">
-          *Depoimentos ilustrativos para apresentação comercial. Substitua por relatos reais quando disponíveis.
+          *Depoimentos e nomes de estabelecimentos ilustrativos para apresentação comercial. Substitua por relatos reais quando disponíveis.
         </p>
       </div>
     </section>
@@ -2206,11 +2245,11 @@
           <div>
             <h2>Solicite uma demonstração da Zero13.</h2>
             <p>
-              Fale pelo WhatsApp comercial +55 13 98822-9261 para avaliar PDV, equipamentos, rede,
-              suporte técnico, retaguarda, comandas e organização da sua operação comercial.
+              Fale pelo WhatsApp comercial para avaliar PDV, equipamentos, rede,
+              suporte técnico, retaguarda, comandas e organização da sua operação comercial. O atendimento é distribuído alternadamente entre Rafael e Alexander.
             </p>
           </div>
-          <a class="btn btn-whatsapp" href="https://wa.me/5513988229261?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20Alexander%20da%20Zero13." target="_blank" rel="noopener noreferrer">
+          <a class="btn btn-whatsapp" href="https://wa.me/5513988229261?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20Alexander%20da%20Zero13." target="_blank" rel="noopener noreferrer" data-whatsapp-rotate="true">
             Chamar no WhatsApp
           </a>
         </div>
@@ -2230,9 +2269,9 @@
     href="https://wa.me/5513988229261?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20Alexander%20da%20Zero13."
     target="_blank"
     rel="noopener noreferrer"
-    aria-label="Falar com Alexander da Zero13 pelo WhatsApp"
-  >
-    <span class="whatsapp-label">Fale com Alexander</span>
+    aria-label="Falar com Rafael ou Alexander da Zero13 pelo WhatsApp"
+   data-whatsapp-rotate="true">
+    <span class="whatsapp-label">Fale pelo WhatsApp</span>
     <span class="whatsapp-icon">☏</span>
   </a>
 
@@ -2320,6 +2359,158 @@
     atualizarClimaSantos();
     setInterval(atualizarDataHora, 1000);
     setInterval(atualizarClimaSantos, 600000);
+
+
+    const ATENDENTES_WHATSAPP = [
+      {
+        nome: 'Rafael',
+        telefone: '5513988215842'
+      },
+      {
+        nome: 'Alexander',
+        telefone: '5513988229261'
+      }
+    ];
+
+    function gerarLinkWhatsAppIntercalado() {
+      const chaveIndice = 'zero13_whatsapp_indice_atendente';
+      const indiceSalvo = Number(localStorage.getItem(chaveIndice) || '0');
+      const atendente = ATENDENTES_WHATSAPP[indiceSalvo % ATENDENTES_WHATSAPP.length];
+      const proximoIndice = (indiceSalvo + 1) % ATENDENTES_WHATSAPP.length;
+
+      localStorage.setItem(chaveIndice, String(proximoIndice));
+
+      const mensagem = encodeURIComponent(`Olá, gostaria de falar com ${atendente.nome} da Zero13.`);
+      return `https://wa.me/${atendente.telefone}?text=${mensagem}`;
+    }
+
+    document.querySelectorAll('[data-whatsapp-rotate="true"]').forEach((link) => {
+      link.addEventListener('click', () => {
+        link.href = gerarLinkWhatsAppIntercalado();
+      });
+    });
+
+
+    const DEPOIMENTOS_ZERO13 = [
+      {
+        estrelas: '★★★★★',
+        texto: 'A implantação do PDV deixou nosso caixa muito mais rápido. A equipe conseguiu operar com menos erro e o suporte ajudou bastante nos primeiros dias.',
+        avatar: 'ME',
+        empresa: 'Mercado Estrela Azul',
+        meta: 'Marcelo Ribeiro • Mercado de bairro'
+      },
+      {
+        estrelas: '★★★★★',
+        texto: 'Organizamos o balcão, impressora, comandas e fechamento de caixa. O atendimento ficou mais fluido e ganhamos mais controle da rotina da padaria.',
+        avatar: 'PV',
+        empresa: 'Padaria Pão da Vila',
+        meta: 'Carla Pereira • Padaria e confeitaria'
+      },
+      {
+        estrelas: '★★★★★',
+        texto: 'A automação ajudou muito nas comandas, mesas e pedidos. Hoje conseguimos acompanhar melhor o movimento e reduzir atrasos no atendimento.',
+        avatar: 'P13',
+        empresa: 'Restaurante Porto 13',
+        meta: 'Renato Silva • Bar e restaurante'
+      },
+      {
+        estrelas: '★★★★★',
+        texto: 'Antes tínhamos dificuldade para controlar estoque, vendas e fechamento. Com a retaguarda organizada, ficou muito mais fácil tomar decisões.',
+        avatar: 'UM',
+        empresa: 'Loja Urban Mix',
+        meta: 'Fernanda Lima • Loja de varejo'
+      },
+      {
+        estrelas: '★★★★★',
+        texto: 'A balança integrada e as etiquetas reduziram filas no balcão. O atendimento ficou mais rápido e a operação passou a ter muito menos retrabalho.',
+        avatar: 'BC',
+        empresa: 'Açougue Bom Corte',
+        meta: 'André Matos • Açougue e carnes'
+      },
+      {
+        estrelas: '★★★★★',
+        texto: 'O suporte no pós-venda fez diferença. Sempre que precisamos de orientação, fomos atendidos com clareza e sem enrolação.',
+        avatar: 'SM',
+        empresa: 'Empório Santa Marina',
+        meta: 'Patrícia Alves • Empório e conveniência'
+      },
+      {
+        estrelas: '★★★★★',
+        texto: 'As comandas e os pedidos para a cozinha ficaram muito mais organizados. A equipe ganhou agilidade nos horários de maior movimento.',
+        avatar: 'BC',
+        empresa: 'Brasa do Canal',
+        meta: 'Gustavo Nunes • Hamburgueria'
+      },
+      {
+        estrelas: '★★★★★',
+        texto: 'Com o PDV configurado e os produtos bem cadastrados, conseguimos controlar melhor os preços, promoções e relatórios do caixa.',
+        avatar: 'NP',
+        empresa: 'Minimercado Nova Praia',
+        meta: 'Luciana Costa • Minimercado'
+      },
+      {
+        estrelas: '★★★★★',
+        texto: 'A impressora, o leitor e o controle de caixa passaram a trabalhar juntos. A rotina ficou mais simples para os operadores.',
+        avatar: 'PA',
+        empresa: 'Conveniência Ponto Azul',
+        meta: 'Ricardo Gomes • Conveniência'
+      },
+      {
+        estrelas: '★★★★★',
+        texto: 'O atendimento ficou mais profissional. Conseguimos lançar produtos, acompanhar vendas e fechar o caixa com mais segurança.',
+        avatar: 'GP',
+        empresa: 'Cafeteria Grão & Prosa',
+        meta: 'Mariana Torres • Cafeteria'
+      },
+      {
+        estrelas: '★★★★★',
+        texto: 'A organização das comandas ajudou a diminuir erros de pedido e melhorou a comunicação entre salão, balcão e cozinha.',
+        avatar: 'FE',
+        empresa: 'Pizzaria Forno da Esquina',
+        meta: 'Eduardo Martins • Pizzaria'
+      },
+      {
+        estrelas: '★★★★★',
+        texto: 'A pesagem, as etiquetas e o cadastro de produtos deixaram nosso atendimento muito mais rápido, principalmente nos horários de pico.',
+        avatar: 'VS',
+        empresa: 'Hortifruti Verde Santos',
+        meta: 'Sônia Carvalho • Hortifruti'
+      }
+    ];
+
+    function atualizarDepoimentos(indiceGrupo) {
+      const cards = Array.from(document.querySelectorAll('[data-testimonial-card]'));
+      const dots = Array.from(document.querySelectorAll('[data-testimonial-dot]'));
+
+      if (!cards.length) return;
+
+      cards.forEach((card) => card.classList.add('is-fading'));
+
+      setTimeout(() => {
+        cards.forEach((card, posicao) => {
+          const depoimento = DEPOIMENTOS_ZERO13[(indiceGrupo + posicao) % DEPOIMENTOS_ZERO13.length];
+
+          card.querySelector('[data-testimonial-stars]').textContent = depoimento.estrelas;
+          card.querySelector('[data-testimonial-text]').textContent = depoimento.texto;
+          card.querySelector('[data-testimonial-avatar]').textContent = depoimento.avatar;
+          card.querySelector('[data-testimonial-business]').textContent = depoimento.empresa;
+          card.querySelector('[data-testimonial-meta]').textContent = depoimento.meta;
+
+          card.classList.remove('is-fading');
+        });
+
+        const paginaAtiva = Math.floor(indiceGrupo / 3) % dots.length;
+        dots.forEach((dot, index) => dot.classList.toggle('is-active', index === paginaAtiva));
+      }, 280);
+    }
+
+    let indiceDepoimentoAtual = 0;
+    atualizarDepoimentos(indiceDepoimentoAtual);
+    setInterval(() => {
+      indiceDepoimentoAtual = (indiceDepoimentoAtual + 3) % DEPOIMENTOS_ZERO13.length;
+      atualizarDepoimentos(indiceDepoimentoAtual);
+    }, 5000);
+
 
     document.getElementById('anoAtual').textContent = new Date().getFullYear();
   </script>

@@ -10,3 +10,6 @@ Para publicar no GitHub Pages, envie o arquivo `index.html` e a pasta `assets` p
 
 
 Atualização: adicionada seção Quem Somos com a história da 013 Automação Comercial / RRSYSTEM.
+
+
+Atualização: os botões de WhatsApp agora intercalam automaticamente entre Rafael (+55 13 98821-5842) e Alexander (+55 13 98822-9261).
