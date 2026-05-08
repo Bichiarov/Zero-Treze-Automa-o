@@ -167,6 +167,12 @@
       animation: pulseWhatsApp 1.8s ease-in-out infinite;
     }
 
+    .whatsapp-icon svg {
+      width: 34px;
+      height: 34px;
+      display: block;
+    }
+
     @keyframes pulseWhatsApp {
       0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.44); }
       50% { transform: scale(1.06); box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
@@ -1646,181 +1652,6 @@
     }
 
 
-    /* Área de depoimentos */
-    .testimonials-section {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .testimonials-section::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background:
-        radial-gradient(circle at 15% 12%, rgba(0, 142, 232, 0.14), transparent 34%),
-        radial-gradient(circle at 85% 70%, rgba(0, 142, 232, 0.08), transparent 32%);
-    }
-
-    .testimonials-section > .container {
-      position: relative;
-      z-index: 2;
-    }
-
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 28px;
-    }
-
-    .testimonial-card {
-      position: relative;
-      min-height: 300px;
-      border: 1px solid rgba(215, 221, 229, 0.16);
-      border-radius: 26px;
-      padding: 26px;
-      background:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.018)),
-        rgba(255, 255, 255, 0.045);
-      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.22);
-      overflow: hidden;
-      transition: opacity 0.28s ease, transform 0.28s ease, border-color 0.24s ease, background 0.24s ease;
-    }
-
-    .testimonial-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(0, 142, 232, 0.48);
-      background:
-        linear-gradient(145deg, rgba(0, 142, 232, 0.12), rgba(255, 255, 255, 0.025)),
-        rgba(255, 255, 255, 0.045);
-    }
-
-    .testimonial-card::before {
-      content: "“";
-      position: absolute;
-      right: 20px;
-      top: -24px;
-      color: rgba(0, 142, 232, 0.18);
-      font-size: 8.5rem;
-      line-height: 1;
-      font-family: Georgia, serif;
-      font-weight: 900;
-    }
-
-    .testimonial-stars {
-      color: var(--azul-claro);
-      letter-spacing: 0.12em;
-      font-size: 0.96rem;
-      margin-bottom: 18px;
-      text-shadow: 0 0 16px rgba(0, 142, 232, 0.34);
-    }
-
-    .testimonial-text {
-      position: relative;
-      z-index: 2;
-      color: var(--prata);
-      font-size: 1.02rem;
-      line-height: 1.72;
-      margin-bottom: 24px;
-    }
-
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      gap: 13px;
-      margin-top: auto;
-    }
-
-    .testimonial-avatar {
-      width: 48px;
-      height: 48px;
-      border-radius: 16px;
-      display: grid;
-      place-items: center;
-      color: #00111f;
-      background: linear-gradient(135deg, var(--azul), var(--prata));
-      font-weight: 950;
-      box-shadow: 0 12px 28px rgba(0, 142, 232, 0.24);
-      flex: 0 0 auto;
-    }
-
-    .testimonial-author strong {
-      display: block;
-      color: var(--branco);
-      line-height: 1.2;
-    }
-
-    .testimonial-author span {
-      display: block;
-      color: var(--prata-escuro);
-      font-size: 0.9rem;
-      margin-top: 3px;
-    }
-
-    .testimonial-note {
-      display: none;
-      margin-top: 18px;
-      color: var(--prata-escuro);
-      font-size: 0.9rem;
-    }
-
-    .testimonial-card {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .testimonial-card.is-fading {
-      opacity: 0;
-      transform: translateY(8px);
-    }
-
-    .testimonials-controls {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 22px;
-    }
-
-    .testimonial-dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 999px;
-      background: rgba(215, 221, 229, 0.26);
-      transition: 0.25s ease;
-    }
-
-    .testimonial-dot.is-active {
-      width: 30px;
-      background: var(--azul-claro);
-      box-shadow: 0 0 18px rgba(0, 142, 232, 0.48);
-    }
-
-    @media (max-width: 980px) {
-      .testimonials-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .testimonials-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-      }
-
-      .testimonial-card {
-        min-height: auto;
-        padding: 22px;
-        border-radius: 24px;
-      }
-
-      .testimonial-text {
-        font-size: 0.98rem;
-      }
-    }
-
-
     /* Área de economia / economômetro */
     .economy-section {
       position: relative;
@@ -2051,7 +1882,6 @@
         <a href="#quem-somos">Quem somos</a>
         <a href="#equipamentos">Equipamentos</a>
         <a href="#segmentos">Segmentos</a>
-        <a href="#depoimentos">Depoimentos</a>
         <a href="#funcionalidades">Funcionalidades</a>
         <a href="#seguranca">Segurança</a>
         <a href="#contato">Contato</a>
@@ -2417,69 +2247,6 @@
 
 
 
-    <section id="depoimentos" class="testimonials-section">
-      <div class="container">
-        <div class="section-title">
-          <span>Depoimentos</span>
-          <h2>Relatos que mostram como a automação melhora a rotina.</h2>
-          <p>
-            Relatos de cenários comerciais para demonstrar como a automação pode melhorar caixa, atendimento, estoque e pós-venda.
-          </p>
-        </div>
-
-        <div class="testimonials-grid" aria-live="polite">
-          <article class="testimonial-card" data-testimonial-card>
-            <div class="testimonial-stars" data-testimonial-stars>★★★★★</div>
-            <p class="testimonial-text" data-testimonial-text>
-              A implantação do PDV deixou nosso caixa muito mais rápido. A equipe conseguiu operar com menos erro e o suporte ajudou bastante nos primeiros dias.
-            </p>
-            <div class="testimonial-author">
-              <div class="testimonial-avatar" data-testimonial-avatar>ME</div>
-              <div>
-                <strong data-testimonial-business>Mercado Estrela Azul</strong>
-                <span data-testimonial-meta>Marcelo Ribeiro • Mercado de bairro</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="testimonial-card" data-testimonial-card>
-            <div class="testimonial-stars" data-testimonial-stars>★★★★★</div>
-            <p class="testimonial-text" data-testimonial-text>
-              Organizamos o balcão, impressora, comandas e fechamento de caixa. O atendimento ficou mais fluido e ganhamos mais controle da rotina da padaria.
-            </p>
-            <div class="testimonial-author">
-              <div class="testimonial-avatar" data-testimonial-avatar>PV</div>
-              <div>
-                <strong data-testimonial-business>Padaria Pão da Vila</strong>
-                <span data-testimonial-meta>Carla Pereira • Padaria e confeitaria</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="testimonial-card" data-testimonial-card>
-            <div class="testimonial-stars" data-testimonial-stars>★★★★★</div>
-            <p class="testimonial-text" data-testimonial-text>
-              A automação ajudou muito nas comandas, mesas e pedidos. Hoje conseguimos acompanhar melhor o movimento e reduzir atrasos no atendimento.
-            </p>
-            <div class="testimonial-author">
-              <div class="testimonial-avatar" data-testimonial-avatar>P13</div>
-              <div>
-                <strong data-testimonial-business>Restaurante Porto 13</strong>
-                <span data-testimonial-meta>Renato Silva • Bar e restaurante</span>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <div class="testimonials-controls" aria-label="Indicador de depoimentos">
-          <span class="testimonial-dot is-active" data-testimonial-dot></span>
-          <span class="testimonial-dot" data-testimonial-dot></span>
-          <span class="testimonial-dot" data-testimonial-dot></span>
-          <span class="testimonial-dot" data-testimonial-dot></span>
-        </div>
-      </div>
-    </section>
-
     <section id="contato">
       <div class="container">
         <div class="cta">
@@ -2513,7 +2280,11 @@
     aria-label="Falar com Rafael ou Alexander da Zero13 pelo WhatsApp"
    data-whatsapp-rotate="true">
     <span class="whatsapp-label">Fale pelo WhatsApp</span>
-    <span class="whatsapp-icon">☏</span>
+    <span class="whatsapp-icon" aria-hidden="true">
+      <svg viewBox="0 0 32 32" role="img" focusable="false">
+        <path fill="#ffffff" d="M16.02 3.2A12.66 12.66 0 0 0 5.17 22.4L3.6 28.8l6.55-1.53A12.67 12.67 0 1 0 16.02 3.2Zm0 22.95c-1.9 0-3.75-.52-5.37-1.5l-.38-.23-3.88.9.93-3.78-.25-.4A10.35 10.35 0 1 1 16.02 26.15Zm5.77-7.72c-.32-.16-1.9-.94-2.2-1.05-.3-.1-.52-.16-.74.16-.21.32-.84 1.05-1.03 1.27-.19.21-.38.24-.7.08-.32-.16-1.35-.5-2.58-1.6-.95-.85-1.6-1.9-1.79-2.22-.18-.32-.02-.5.14-.65.14-.14.32-.38.48-.56.16-.19.21-.32.32-.54.11-.21.05-.4-.03-.56-.08-.16-.74-1.79-1.01-2.45-.27-.64-.54-.55-.74-.56h-.63c-.21 0-.56.08-.85.4-.3.32-1.12 1.1-1.12 2.68s1.15 3.1 1.31 3.32c.16.21 2.26 3.45 5.48 4.84.77.33 1.37.53 1.83.68.77.24 1.47.21 2.02.13.62-.09 1.9-.78 2.17-1.53.27-.75.27-1.4.19-1.53-.08-.14-.29-.22-.61-.38Z"/>
+      </svg>
+    </span>
   </a>
 
   <script>
@@ -2552,113 +2323,6 @@
     });
 
 
-    const DEPOIMENTOS_ZERO13 = [
-      {
-        estrelas: '★★★★★',
-        texto: 'A implantação do PDV deixou nosso caixa mais rápido e reduziu erros no atendimento. O suporte acompanhou a equipe nos primeiros dias e isso fez muita diferença.',
-        avatar: 'ME',
-        empresa: 'Mercado Estrela Azul',
-        meta: 'Marcelo Ribeiro • Mercado de bairro'
-      },
-      {
-        estrelas: '★★★★★',
-        texto: 'Organizamos balcão, impressora, comandas e fechamento de caixa. A rotina da padaria ficou mais simples e os pedidos passaram a sair com mais controle.',
-        avatar: 'PV',
-        empresa: 'Padaria Pão da Vila',
-        meta: 'Carla Pereira • Padaria e confeitaria'
-      },
-      {
-        estrelas: '★★★★★',
-        texto: 'Com as comandas e mesas automatizadas, conseguimos acompanhar melhor o movimento do salão e reduzir atrasos nos pedidos.',
-        avatar: 'P13',
-        empresa: 'Restaurante Porto 13',
-        meta: 'Renato Silva • Bar e restaurante'
-      },
-      {
-        estrelas: '★★★★★',
-        texto: 'Antes era difícil controlar estoque, vendas e fechamento. Com a retaguarda organizada, ficou muito mais fácil tomar decisões no dia a dia.',
-        avatar: 'UM',
-        empresa: 'Loja Urban Mix',
-        meta: 'Fernanda Lima • Loja de varejo'
-      },
-      {
-        estrelas: '★★★★★',
-        texto: 'A balança integrada e as etiquetas ajudaram a reduzir filas no balcão. O atendimento ficou mais rápido e com menos retrabalho.',
-        avatar: 'BC',
-        empresa: 'Açougue Bom Corte',
-        meta: 'André Matos • Açougue e carnes'
-      },
-      {
-        estrelas: '★★★★★',
-        texto: 'O pós-venda foi o grande diferencial. Sempre que precisamos de orientação, tivemos retorno rápido, claro e direto.',
-        avatar: 'SM',
-        empresa: 'Empório Santa Marina',
-        meta: 'Patrícia Alves • Empório e conveniência'
-      },
-      {
-        estrelas: '★★★★★',
-        texto: 'As comandas e os pedidos para a cozinha ficaram muito mais organizados. A equipe ganhou agilidade nos horários de maior movimento.',
-        avatar: 'BR',
-        empresa: 'Brasa do Canal',
-        meta: 'Gustavo Nunes • Hamburgueria'
-      },
-      {
-        estrelas: '★★★★★',
-        texto: 'Com produtos bem cadastrados e caixa configurado, conseguimos controlar melhor preços, promoções e relatórios de venda.',
-        avatar: 'NP',
-        empresa: 'Minimercado Nova Praia',
-        meta: 'Luciana Costa • Minimercado'
-      },
-      {
-        estrelas: '★★★★★',
-        texto: 'A impressora, o leitor e o controle de caixa passaram a trabalhar juntos. A rotina ficou mais simples para os operadores.',
-        avatar: 'PA',
-        empresa: 'Conveniência Ponto Azul',
-        meta: 'Ricardo Gomes • Conveniência'
-      }
-    ];
-
-    function atualizarDepoimentos(indiceGrupo) {
-      const cards = Array.from(document.querySelectorAll('[data-testimonial-card]'));
-      const dots = Array.from(document.querySelectorAll('[data-testimonial-dot]'));
-      const totalPaginas = Math.ceil(DEPOIMENTOS_ZERO13.length / Math.max(cards.length, 1));
-
-      if (!cards.length) return;
-
-      cards.forEach((card) => card.classList.add('is-fading'));
-
-      setTimeout(() => {
-        cards.forEach((card, posicao) => {
-          const depoimento = DEPOIMENTOS_ZERO13[(indiceGrupo + posicao) % DEPOIMENTOS_ZERO13.length];
-
-          card.querySelector('[data-testimonial-stars]').textContent = depoimento.estrelas;
-          card.querySelector('[data-testimonial-text]').textContent = depoimento.texto;
-          card.querySelector('[data-testimonial-avatar]').textContent = depoimento.avatar;
-          card.querySelector('[data-testimonial-business]').textContent = depoimento.empresa;
-          card.querySelector('[data-testimonial-meta]').textContent = depoimento.meta;
-
-          card.classList.remove('is-fading');
-        });
-
-        const paginaAtiva = Math.floor(indiceGrupo / cards.length) % Math.max(totalPaginas, 1);
-        dots.forEach((dot, index) => dot.classList.toggle('is-active', index === paginaAtiva));
-      }, 280);
-    }
-
-    const testimonialControls = document.querySelector('.testimonials-controls');
-    const testimonialCards = Array.from(document.querySelectorAll('[data-testimonial-card]'));
-    if (testimonialControls && testimonialCards.length) {
-      const totalPaginas = Math.ceil(DEPOIMENTOS_ZERO13.length / testimonialCards.length);
-      testimonialControls.innerHTML = Array.from({ length: totalPaginas }, (_, index) => `<span class="testimonial-dot ${index === 0 ? 'is-active' : ''}" data-testimonial-dot></span>`).join('');
-    }
-
-    let indiceDepoimentoAtual = 0;
-    atualizarDepoimentos(indiceDepoimentoAtual);
-    setInterval(() => {
-      const cardsVisiveis = Math.max(document.querySelectorAll('[data-testimonial-card]').length, 1);
-      indiceDepoimentoAtual = (indiceDepoimentoAtual + cardsVisiveis) % DEPOIMENTOS_ZERO13.length;
-      atualizarDepoimentos(indiceDepoimentoAtual);
-    }, 5000);
     document.getElementById('anoAtual').textContent = new Date().getFullYear();
   </script>
 </body>
